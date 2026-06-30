@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        board: [ecvt-controller, daq-node, hud-node, telemetry-node]
+        board: [ecvt-controller, daq-node, hud-node]
     steps:
       - uses: actions/checkout@v4
 

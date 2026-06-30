@@ -1,6 +1,6 @@
 # NU Baja SAE — Firmware
 
-PlatformIO multi-env monorepo for all NU Baja SAE board firmware.
+PlatformIO multi-env monorepo for all NU Baja SAE board firmware. All boards are ESP32 (`espressif32` / `nodemcu-32s`, matching [Dingo_Wheels](https://github.com/NU-Baja-SAE/Dingo_Wheels)).
 
 ## Structure
 
@@ -10,8 +10,7 @@ firmware/
 ├── boards/
 │   ├── ecvt-controller/src/
 │   ├── daq-node/src/
-│   ├── hud-node/src/
-│   └── telemetry-node/src/
+│   └── hud-node/src/
 ├── lib/
 │   ├── baja-can/             # MCP2515 driver wrapper, send/recv helpers
 │   ├── baja-messages/        # generated from DBC (cantools codegen)
@@ -29,7 +28,7 @@ firmware/
 pio run -e <board-name> -t upload
 ```
 
-Valid board names: `ecvt-controller`, `daq-node`, `hud-node`, `telemetry-node`.
+Valid board names: `ecvt-controller`, `daq-node`, `hud-node`.
 
 ## Regenerating CAN messages
 
