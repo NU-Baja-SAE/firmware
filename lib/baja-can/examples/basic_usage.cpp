@@ -5,6 +5,15 @@
 //
 // Wiring: connect the ESP32 TX/RX pins below to a CAN transceiver
 // (e.g. SN65HVD230), then the transceiver's CANH/CANL to the bus.
+//
+// The trailing number on writeMessage()/readMessage() (e.g. the `5` below) is a
+// TIMEOUT IN MILLISECONDS — how long to block if the driver queue isn't ready:
+//   * write: waits up to N ms for room in the TX queue, else ESP_ERR_TIMEOUT.
+//   * read:  waits up to N ms for a frame to arrive,   else ESP_ERR_TIMEOUT.
+// Use 0 for non-blocking (act only if ready now). Avoid portMAX_DELAY in loop()
+// — blocking forever on a read would stall poll() and stop auto-recovery.
+// A small value like 5 ms keeps the control loop responsive; always check the
+// return value, since a timeout means the frame was not sent/received.
 
 #include "BajaCan.h"
 #include "CanDatabase.h"
