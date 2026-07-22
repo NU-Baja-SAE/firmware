@@ -1,0 +1,11 @@
+{
+  "name": "baja-can",
+  "version": "0.1.0",
+  "description": "ESP32 TWAI (built-in CAN 2.0) driver wrapper for NU Baja SAE, with self-healing bus recovery and health diagnostics.",
+  "keywords": ["can", "twai", "esp32", "baja"],
+  "frameworks": ["arduino", "espidf"],
+  "platforms": ["espressif32"],
+  "build": {
+    "srcDir": "src"
+  }
+}
